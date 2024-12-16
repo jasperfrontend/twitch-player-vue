@@ -5,6 +5,7 @@ This Vue3 app shows an embedded twitch player if you pass in a /route that resem
 ## Project Setup
 
 ```sh
+cd ./twitch-indoorirl
 npm i
 ```
 
