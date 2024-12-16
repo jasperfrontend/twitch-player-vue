@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h1>Twitch Streamer: {{ streamer }}</h1>
+  <div class="container">
+    <h1>IndoorIRL Streamer: {{ streamer }}</h1>
     <div v-if="streamer" id="twitch-embed"></div>
-    <p v-else>Please specify a streamer in the URL (e.g., /xQc).</p>
+    <p v-else>Specify an indoor IRL streamer in the URL (e.g., /xQc).</p>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
           channel: this.streamer,
           layout: 'video',
           width: '100%',
-          height: '480',
+          height: '100%',
         });
       };
       document.body.appendChild(script);
@@ -33,8 +33,23 @@ export default {
 };
 </script>
 
-<style>
-#twitch-embed {
-  margin-top: 20px;
+<style scoped>
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
 }
+h1 {
+  text-align: center;
+}
+#twitch-embed {
+  width: 1280px;
+  height: 720px;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  aspect-ratio: 16 / 9;
+}
+
 </style>
